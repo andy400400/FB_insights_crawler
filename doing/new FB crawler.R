@@ -6,20 +6,16 @@ library("jsonlite")
 
 ##############################################################
 
-city_name<-"chiao"
+city_name<-"dongshan"
 
 #chiao,ilan,lotung,suao,toucheng
+#dongshan,jhuangwei,sanxing,wujie,yuanshan
 
 ##############################################################
-
-all<-dir(paste("C:/pro/data/original_of_5/",city_name,sep = ""))
-all.length<-length(all)
-all_id<-NULL
-for (x in 1:all.length) {
-  bb<-unlist(strsplit(all[x],split=".",fixed=T))
-  all_id<-c(all_id,bb[1])
-}
-year_id<-all_id
+options(digits = 20)
+city_path<-paste("C:/pro/data/111/",city_name,".csv",sep = "")
+id_data<-read.csv(city_path)
+year_id<-id_data$html_id
 
 ##############################################################
 
@@ -28,7 +24,7 @@ start_finish_time<-c(1459468800,1456790400,1454284800,1451606400,1448928000,1446
 
 #access_token
 
-access_token_change<-'CAACEdEose0cBAHFeBZBXmUuHCdZBpRe0EZAInVZCN5dZA1qTMfoOJnZA2zDAoeZABj7GC7NARdfZClXSeaCNF6ZAIiZCVcfEli82blndOWSsr1toaQ3V1wSlmQPvEiXuziaFmcaVlicTCwlyqJUoDCAXnvU8znL6m8nmRmunZCBTICYQsnvxViJVdNiHcVy7s5Cg6MJvOhPOI9i3ZAdUcnU6O71k'
+access_token_change<-'CAACEdEose0cBANwDwiFMfEAuY12ZBChx06cmva9hd8d7WrHbi938VX0g65nANE51XZCENs4zSq6c7aeAiqkbu4T46KLYI6O2lQbCh35pFTo8phwmAh8TlkLBoAZBShvPmhav0KWmDFeSOZBQreoISsZA4huYtldJL8qnZASeUwKD8CdUGDhnfEIUjvSpjf4VuWPEiHiVKTxAZDZD'
 
 ##############################################################
 
